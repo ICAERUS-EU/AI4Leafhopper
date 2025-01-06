@@ -5,9 +5,7 @@
     <h3 align="center">AI4Leafhopper</h3>
     
    <p align="center">
-
-    This project is developed to detect early severity symptoms of leafhopper infestation through the analysis of RGB and multispectral vineyard drone imagery.
-
+    This project was developed to detect symptoms of leafhopper infestation early in severity through the analysis of RGB and multispectral vineyard drone imagery.
     <br/>
     <br/>
     <br/>
@@ -19,7 +17,7 @@
 </p>
 </div>
 
-![Downloads](https://img.shields.io/github/downloads/icaerus-eu/icaerus-repo-template/total) ![Contributors](https://img.shields.io/github/contributors/icaerus-eu/icaerus-repo-template?color=dark-green) ![Forks](https://img.shields.io/github/forks/icaerus-eu/icaerus-repo-template?style=social) ![Stargazers](https://img.shields.io/github/stars/icaerus-eu/icaerus-repo-template?style=social) ![Issues](https://img.shields.io/github/issues/icaerus-eu/icaerus-repo-template) 
+![Downloads](https://img.shields.io/github/downloads/icaerus-eu/UC1_Crop_Monitoring/total) ![Contributors](https://img.shields.io/github/contributors/icaerus-eu/UC1_Crop_Monitoring?color=dark-green) ![Forks](https://img.shields.io/github/forks/icaerus-eu/UC1_Crop_Monitoring?style=social) ![Stargazers](https://img.shields.io/github/stars/icaerus-eu/UC1_Crop_Monitoring?style=social) ![Issues](https://img.shields.io/github/issues/icaerus-eu/UC1_Crop_Monitoring) ![License](https://img.shields.io/github/license/icaerus-eu/UC1_Crop_Monitoring) 
 
 ### Table Of Contents
 
