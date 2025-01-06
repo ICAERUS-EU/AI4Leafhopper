@@ -28,13 +28,13 @@ The [vine segmentation](https://github.com/ICAERUS-EU/AI4Leafhopper/vine_segment
 1. Segmented vines with their bounding boxes:  
 
 <p align="center">
-  <img src="[https://github.com/ICAERUS-EU/AI4Leafhopper/vine_segmentation/images/crop_20240528_code_reyAB01_154.png](https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/images/crop_20240528_code_reyAB01_154.png)" width="400" height="400">
+  <img src="https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/images/crop_20240528_code_reyAB01_154.png" width="400" height="400">
 </p>
 
 2. A vector shape file was obtained by merging the single JSON file and representing all the segmented vines in the AB01 vineyard in the Reynolds study area. Thus, the final result displays the AI-segmented vines on the left and the same vines with their corresponding NDVI index on the right:
 
 <p align="center">
-  <img src="[https://github.com/ICAERUS-EU/AI4Leafhopper/vine_segmentation/images/17_results_NDVI_segmentation.jpg](https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg)" width="400" height="400">
+  <img src="https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg" width="400" height="400">
 </p>
 
 
