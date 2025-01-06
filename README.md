@@ -27,7 +27,7 @@
 
 ### Summary
 
-Within this repository, you will find a [vine segmentation model](https://github.com/ICAERUS-EU/AI4Leafhopper/vine_segmentation/) and [leafhopper disease severity prediction](https://github.com/ICAERUS-EU/AI4Leafhopper/severity_prediction/) designed for vineyard severity monitoring. 
+Within this repository, you will find a [vine segmentation model](https://github.com/ICAERUS-EU/AI4Leafhopper/tree/main/vine_segmentation) and [leafhopper disease severity prediction](https://github.com/ICAERUS-EU/AI4Leafhopper/tree/main/severity_prediction) designed for vineyard severity monitoring. 
 
 ### Authors
 * **InnovPlantProtect team** - [InnovPlantProtect](https://github.com/InnovPlantProtect)
