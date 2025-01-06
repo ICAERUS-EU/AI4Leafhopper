@@ -1,0 +1,36 @@
+[{
+    "title":"AI4Leafhopper",
+    "creator": "iLaria Marengo, Ricardo Ramiro, Manisha Sirsat, Nuno Faria",
+    "date": "06/01/2025",
+    "icon":"https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg",
+    "url":"https://github.com/ICAERUS-EU/AI4Leafhopper",
+    "icaerus_applications": ["crop-monitoring"],
+    "uses_cases":[1],
+    "extra":{
+        "usage/description":"The models are developed for the vine segmentation and leafhopper disease severity prediction in the Vineyard."
+    },
+    "filters":{
+        "content": [
+            "Machine learning",
+            "Deep learning",
+            "Computer vision",
+            "Detection",
+            "Vegetation Index"
+            "Early disease prediction"
+            ],  
+        "data-type": [
+            "RGB images",
+            "Multispectral images",
+            "Orthomosaic"
+        ], 
+
+        "subject": [
+            "Vineyards"
+        ],
+
+        "location": [
+            "Portugal"
+            ], 
+        }
+    }
+]
