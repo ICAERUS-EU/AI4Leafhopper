@@ -1,0 +1,6 @@
+path: /home/dep3_user1/vine_seg/yolov9/YOLODataset
+train: images/train
+val: images/val
+
+names:
+    0: vine
