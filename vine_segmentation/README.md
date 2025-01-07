@@ -40,7 +40,7 @@ The [vine segmentation](https://github.com/ICAERUS-EU/AI4Leafhopper/vine_segment
 
 ### Authors
 * **Manisha Sirsat** - [Manisha Sirsat](https://github.com/manishasirsat)
-* **iLaria Marengo**
+* **iLaria Marengo** - [iLaria Marengo](https://github.com/ilamarengo)
 
 
 ### Acknowledgements
