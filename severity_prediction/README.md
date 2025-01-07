@@ -23,7 +23,7 @@ This model can be run using the R script:
 "scriptR_leafhopper_2022_2024_p_s_leaves_delta_wk2_alldata.Rfile"
 
 
-### Output
+### Result
 Two outputs are enabled: 
 1) a pdf including all graphs derived from the linear mixed models run 
 2) a txt file that includes all the text output generated in R and  presents the model's output statistics. The R outputs (graphs and text) are sequential, and generated according to the order of the R script)
