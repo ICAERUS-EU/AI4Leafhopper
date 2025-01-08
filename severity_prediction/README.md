@@ -14,7 +14,7 @@ This repository introduces the necessary steps to develop the model for the seve
 
 
 ### Data
-The dataset [leafhopper_2022_2024_adults_nymphs_per_plot_wk2.csv](https://github.com/ICAERUS-EU/AI4Leafhopper/tree/main/severity_prediction/data) was used to perform the experiments.
+The dataset [leafhopper_2022_2024_adults_nymphs_per_plot_wk2.csv](https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/severity_prediction/data/leafhopper_2022_2024_adults_nymphs_per_plot_wk2.csv) was used to perform the experiments.
 
 
 ### Model
