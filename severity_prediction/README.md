@@ -29,7 +29,7 @@ Two outputs are enabled:
 2) a txt file that includes all the text output generated in R and  presents the model's output statistics. The R outputs (graphs and text) are sequential, and generated according to the order of the R script)
 
 ### Authors
-** Nuno Faria **
+Nuno Faria
 
 ### Acknowledgements
 This project is funded by the European Union, grant ID 101060643.
