@@ -1,0 +1,129 @@
+# PREDICTING SYMPTOMS IN 2 WEEKS USING % OF LEAVES WITH MORE THAN 25% OF SYMPTOMS AS DEPENDENT VAR: MODELLING USING ADULTS+NYMPHS#
+
+library(nlme)
+library(MuMIn)
+library(mgcv)
+library (effects)
+
+setwd("C:/Users/nunfar/Desktop/Icaerus_files")
+leafhopper2022_2024_full_per_plot=read.csv("leafhopper_2022_2024_adults_nymphs_per_plot_wk2.csv", header = TRUE,sep = ";",dec = ",")	
+
+#saving plots#
+pdf("p_s_leaves_delta_wk2_alldata.pdf",onefile=T)
+
+
+# Exploring random structure#
+
+p_s_leaves_delta2_year=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2,random=~1|year, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+p_s_leaves_delta2_year_week=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2,random=~1|year/week, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+p_s_leaves_delta2_week=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML",random=~1|week)
+
+p_s_leaves_delta2=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+p_s_leaves_delta2_plot=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2,random=~1|plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+
+#comparing fit#
+
+ AICc(p_s_leaves_delta2,p_s_leaves_delta2_year,p_s_leaves_delta2_week,p_s_leaves_delta2_year_week,p_s_leaves_delta2_plot)
+
+
+
+# MODELLING  ADULTS+NYMPHS - defining random structure: plot goes to fixed #
+
+p_s_leaves_delta2_year=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id,random=~1|year, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+p_s_leaves_delta2_year_week=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id,random=~1|year/week, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+p_s_leaves_delta2_week=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML",random=~1|week)
+
+p_s_leaves_delta2=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+
+#comparing fit#
+
+ AICc(p_s_leaves_delta2,p_s_leaves_delta2_year,p_s_leaves_delta2_week,p_s_leaves_delta2_year_week)
+
+
+
+# MODELLING  ADULTS+NYMPHS - defining random structure: plot and year go to fixed #
+
+
+p_s_leaves_delta2_week=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML",random=~1|week)
+
+p_s_leaves_delta2=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+p_s_leaves_delta2_week_no_plot=lme(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+as.factor(year), data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML",random=~1|week)
+
+p_s_leaves_delta2_no_plot=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+as.factor(year), data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="REML")
+
+
+#comparing fit#
+
+AICc(p_s_leaves_delta2,p_s_leaves_delta2_week,p_s_leaves_delta2_no_plot,p_s_leaves_delta2_week_no_plot)
+
+
+
+#Defining full fixed structure - fixed variables in interaction"
+
+p_s_leaves_delta2_weekplot=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+stdize(week)+plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+p_s_leaves_delta2_weekXplot=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+stdize(week)*plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+p_s_leaves_delta2_weekXyear=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+stdize(week)*as.factor(year), data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+p_s_leaves_delta2_weekyear=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+stdize(week)+as.factor(year), data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+p_s_leaves_delta2_nymphsXweek=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)*stdize(week)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+plot_id, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+p_s_leaves_delta2_nymphsXweek_no_plot=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)*stdize(week)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+as.factor(year), data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+AICc(p_s_leaves_delta2_weekXplot,p_s_leaves_delta2_weekXyear,p_s_leaves_delta2_nymphsXweek,p_s_leaves_delta2_weekplot,p_s_leaves_delta2_weekyear,p_s_leaves_delta2_nymphsXweek_no_plot)
+
+qqnorm(p_s_leaves_delta2_weekXplot,abline=c(0,1))
+qqnorm(p_s_leaves_delta2_weekXyear,abline=c(0,1))
+qqnorm(p_s_leaves_delta2_nymphsXweek,abline=c(0,1))
+qqnorm(p_s_leaves_delta2_weekplot,abline=c(0,1))
+qqnorm(p_s_leaves_delta2_weekyear,abline=c(0,1))
+qqnorm(p_s_leaves_delta2_nymphsXweek_no_plot,abline=c(0,1))
+
+plot(p_s_leaves_delta2_weekXplot)
+plot(p_s_leaves_delta2_weekXyear)
+plot(p_s_leaves_delta2_nymphsXweek)
+plot(p_s_leaves_delta2_weekplot)
+plot(p_s_leaves_delta2_weekyear)
+plot(p_s_leaves_delta2_nymphsXweek_no_plot)
+
+acf(residuals(p_s_leaves_delta2_weekXplot,type="normalized"),main="standardized residual ACF")
+acf(residuals(p_s_leaves_delta2_weekXyear,type="normalized"),main="standardized residual ACF")
+acf(residuals(p_s_leaves_delta2_nymphsXweek,type="normalized"),main="standardized residual ACF")
+acf(residuals(p_s_leaves_delta2_weekplot,type="normalized"),main="standardized residual ACF")
+acf(residuals(p_s_leaves_delta2_weekyear,type="normalized"),main="standardized residual ACF")
+acf(residuals(p_s_leaves_delta2_nymphsXweek_no_plot,type="normalized"),main="standardized residual ACF")
+
+
+#MODEL AVERAGING#
+
+p_s_leaves_delta2=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)*stdize(week)+stdize(adults_wk2)+stdize(adults_wk3)+stdize(adults_wk4)+stdize(mean_max_temp_2wk)+stdize(mean_max_temp_3wk)+stdize(mean_max_temp_4wk)+stdize(mean_min_rh_2wk)+stdize(mean_min_rh_3wk)+stdize(mean_min_rh_4wk)+stdize(n_leaves_wk2)+treatment_wk1+treatment_wk2+as.factor(year), data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+
+adults_best_sev_delta2=dredge(p_s_leaves_delta2, extra = "R^2")
+confset.95p_sev_delta2 <- get.models(adults_best_sev_delta2, subset = cumsum(weight) <= .95)
+mod_avg_sev_delta2=model.avg(confset.95p_sev_delta2)
+summary(mod_avg_sev_delta2)
+sw(mod_avg_sev_delta2)
+subset(adults_best_sev_delta2,delta<1)
+
+
+#plotting of best model#
+
+year_cat=as.factor(leafhopper2022_2024_full_per_plot$year)
+
+p_s_leaves_delta2=gls(p_s_leaves_delta_wk2~stdize(nymphs_leaf_wk2)*stdize(week)+stdize(adults_wk4)+year_cat, data = leafhopper2022_2024_full_per_plot,na.action = na.fail,method="ML")
+plot(allEffects(p_s_leaves_delta2))
+
+
+dev.off()
+
+
