@@ -15,7 +15,7 @@ A vine segmentation model has been developed to identify and segment individual 
 
 
 ### Data
-The training data repository is available in the [Zenodo data folder](https://zenodo.org/records/14605849), which you can download from there. The YOLODataset includes two directories ('images' and 'labels') along with a dataset.yaml file. The 'images' directory holds the training, testing, and validation images, while the 'labels' directory contains labels for the training and validation datasets. The Labelme tool was used for image annotation. Each vine tree was annotated with precise polygon-based annotations and saved in JSON format. Afterward, the JSON annotations were converted into YOLO format, an acceptable annotation format for the YOLOv9 model.
+The training data repository is available in the [Zenodo data folder](https://zenodo.org/records/14605849), which you can download from there. The YOLODataset includes two directories ('images' and 'labels') along with a dataset.yaml file. The 'images' directory holds the training, testing, and validation images, while the 'labels' directory contains labels for the training and validation datasets. The Labelme tool was used for image annotation. Each vine tree was annotated with precise polygon-based annotations and saved in JSON format. Afterward, the JSON annotations were converted into YOLO format, an acceptable annotation format for the YOLOv9 model. Use this [jupyter notebook](https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/vine_seg.ipynb) for the model training.
 
 
 ### Model
