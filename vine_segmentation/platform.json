@@ -7,7 +7,7 @@
     "icaerus_applications": ["crop-monitoring"],
     "uses_cases":[1],
     "extra":{
-        "usage/description":"The models are developed for the vine segmentation in the Vineyard."
+        "usage/description":"The model is developed for the vine segmentation in the Vineyard."
     },
     "filters":{
         "content": [
