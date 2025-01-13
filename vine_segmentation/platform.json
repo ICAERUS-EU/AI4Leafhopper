@@ -1,0 +1,36 @@
+[{
+    "title":"Vine Segmentation",
+    "creator": "Manisha Sirsat, iLaria Marengo",
+    "date": "06/01/2025",
+    "icon":"https://raw.githubusercontent.com/ICAERUS-EU/AI4Leafhopper/refs/heads/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg",
+    "url":"https://github.com/ICAERUS-EU/AI4Leafhopper/tree/main/vine_segmentation",
+    "icaerus_applications": ["crop-monitoring"],
+    "uses_cases":[1],
+    "extra":{
+        "usage/description":"The models are developed for the vine segmentation in the Vineyard."
+    },
+    "filters":{
+        "content": [
+            "Machine learning",
+            "Deep learning",
+            "Computer vision",
+            "Detection",
+            "Vegetation Index"
+            "Early disease prediction"
+            ],  
+        "data-type": [
+            "RGB images",
+            "Multispectral images",
+            "Orthomosaic"
+        ], 
+
+        "subject": [
+            "Vineyards"
+        ],
+
+        "location": [
+            "Portugal"
+            ], 
+        }
+    }
+]
