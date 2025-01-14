@@ -1,13 +1,14 @@
-[{
-    "title":"AI4Leafhopper",
-    "creator": "iLaria Marengo, Ricardo Ramiro, Manisha Sirsat, Nuno Faria",
+[
+    {
+    "title":"Vine Segmentation",
+    "creator": "Manisha Sirsat, iLaria Marengo",
     "date": "06/01/2025",
-    "icon":"https://github.com/ICAERUS-EU/AI4Leafhopper/blob/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg",
-    "url":"https://github.com/ICAERUS-EU/AI4Leafhopper",
+    "icon":"https://raw.githubusercontent.com/ICAERUS-EU/AI4Leafhopper/refs/heads/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg",
+    "url":"https://github.com/ICAERUS-EU/AI4Leafhopper/tree/main/vine_segmentation",
     "icaerus_applications": ["crop-monitoring"],
     "uses_cases":[1],
     "extra":{
-        "usage/description":"The models are developed for the vine segmentation and leafhopper disease severity prediction in the Vineyard."
+        "usage/description":"The models are developed for the vine segmentation in the Vineyard."
     },
     "filters":{
         "content": [
@@ -15,7 +16,7 @@
             "Deep learning",
             "Computer vision",
             "Detection",
-            "Vegetation Index"
+            "Vegetation Index",
             "Early disease prediction"
             ],  
         "data-type": [
@@ -32,5 +33,41 @@
             "Portugal"
             ], 
         }
-    }
+    },
+
+  {
+    "title":"Severity Prediction",
+    "creator": "Nuno Faria",
+    "date": "06/01/2025",
+    "icon":"https://raw.githubusercontent.com/ICAERUS-EU/AI4Leafhopper/refs/heads/main/vine_segmentation/images/17_results_NDVI_segmentation.jpg",
+    "url":"https://github.com/ICAERUS-EU/AI4Leafhopper/tree/main/severity_prediction",
+    "icaerus_applications": ["crop-monitoring"],
+    "uses_cases":[1],
+    "extra":{
+        "usage/description":"The model is developed for the leafhopper disease severity prediction in the Vineyard."
+    },
+    "filters":{
+        "content": [
+            "Machine learning",
+            "Deep learning",
+            "Computer vision",
+            "Detection",
+            "Vegetation Index",
+            "Early disease prediction"
+            ],  
+        "data-type": [
+            "RGB images",
+            "Multispectral images",
+            "Orthomosaic"
+        ], 
+
+        "subject": [
+            "Vineyards"
+        ],
+
+        "location": [
+            "Portugal"
+            ], 
+        }
+    }    
 ]
